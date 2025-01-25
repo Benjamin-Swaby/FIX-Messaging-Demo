@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaging Client</title>
+    {{if .Success}}
+
+    <h2>Order Cancel Request:</h2>
+    <h3>Sent:</h3>
+    <h4>{{.Message}}</h4> <br><br>
+    <h3>Response:</h3>
+    <h4>{{.Response}}</h4> <br><br>
+
+    <a href="/"> Back </a>
+        
+    {{else}}
+    <h2>Cancel Order</h2>
+
+    <form method="POST">   
+
+        <label>Sub-ID:</label>
+        <input type="text", name="subID"><br><br>
+
+        <label> Order ID (To Cancel):</label>
+        <input type="text", name="originalOrderID"><br><br>
+
+        <label> Order Id (Of This): </label>
+        <input type="text", name="cloid"><br><br>
+
+        <label>Ticker:</label>
+        <input type="text", name="Ticker"><br><br>
+
+        <label>Side</label>
+        <select name="Side">
+            <option value="BUY">Buy</option>
+            <option value="SELL">Sell</option>
+        </select><br><br>
+    
+
+        <input type="submit">  
+
+    </form>     
+{{end}}
+    
+</head>
+<body>
+    
+</body>
+</html>

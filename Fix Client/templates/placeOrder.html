@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Client</title>
+
+    {{if .Success}}
+
+    <h2>Thank's for Your Order!</h2>
+    <h3>Sent:</h3>
+    <h4>{{.Message}}</h4> <br><br>
+    <h3>Response:</h3>
+    <h4>{{.Response}}</h4> <br><br>
+
+    <a href="/"> Back </a>
+        
+    {{else}}
+    <h2>Place Order</h2>
+
+    <form method="POST">   
+
+        <label>Sub-ID:</label>
+        <input type="text", name="subID"><br><br>
+
+        <label> Order ID:</label>
+        <input type="next", name="oid"><br><br>
+
+        <label>Ticker:</label>
+        <input type="text", name="Ticker"><br><br>
+        
+        <label>Volume:</label>
+        <input type="text", name="Volume"></input><br><br>
+
+        <label>Price:</label>
+        <input type="text", name="Price"></input><br><br>
+
+        <label>Order Type</label>
+        <select name="OrderType">
+            <option value="Limit">Limit</option>
+            <option value="Market">Market</option>
+        </select><br><br>
+
+        <label>Side</label>
+        <select name="Side">
+            <option value="BUY">Buy</option>
+            <option value="SELL">Sell</option>
+        </select><br><br>
+    
+        <input type="submit">  
+
+    </form>     
+{{end}}
+
+</head>
+<body>
+    
+</body>
+</html>
